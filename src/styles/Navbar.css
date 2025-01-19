@@ -14,7 +14,7 @@ nav{
     margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
 }
 
 .my-shop{
@@ -23,4 +23,30 @@ nav{
     color: #2b2525;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
+    margin: 10px;
+}
+
+.cart{
+    cursor: pointer;
+}
+
+.cart span:nth-child(1){
+    font-size: 2rem;
+    color: black;
+    position: relative;
+    top: 10px;
+
+
+
+}
+.cart span:nth-child(2){
+    padding: 0 2px;
+    font-size: 1.5rem;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    top: -15px;
+    margin: 0px;
+    border-radius: 10px;
 }
