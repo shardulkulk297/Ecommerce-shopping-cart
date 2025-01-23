@@ -43,6 +43,7 @@ section{
     background-color: orange;
     cursor: pointer;
     border-radius: 4px;
+    margin: 5px;
 }
 
 .details button:hover{

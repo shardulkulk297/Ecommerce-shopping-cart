@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/Card.css' 
-
+    
 const Card = ({ item, handleClick }) => {
 
     const {title, author, price, img} = item

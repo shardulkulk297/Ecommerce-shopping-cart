@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Card from './Card';
+import InCart from './InCart';
+
 const Cart = ({ cart, setcart }) => {
 
 
@@ -9,21 +11,10 @@ const Cart = ({ cart, setcart }) => {
             {cart?.map((item) => {
                 return <div className="cart-box" key={item.id}>
                     <div >
-                        <Card key={item.id}  item={item} />
+                        <InCart key={item.id}  item={item} />
 
                     </div>
-                    <div>
-                        <button>+</button>
-                        <button>-</button>
-                    </div>
-                    <div>
-                        <span>{item.price}</span>
-                        <button>Remove</button>
-                    </div>
-
-
-
-                </div>
+                         </div>
             })}
 
         </div>
