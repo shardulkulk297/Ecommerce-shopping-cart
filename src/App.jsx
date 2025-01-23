@@ -5,11 +5,14 @@ import Shop from './components/Shop'
 import { Toaster, toast } from 
 'react-hot-toast';
 import Cart from './components/Cart';
+import { createContext } from 'react';
+import { SizeProvider } from './components/SizeContext';
 
 function App() {
   
   const [cart, setcart] = useState([]);
   const [show, setShow] = useState(true);
+  const cartContext = createContext();
   const handleClick = (item)=>{
     // console.log(item)
     let isPresent = false;
@@ -35,11 +38,15 @@ function App() {
   return (
     <>
     <Toaster position='top-center'></Toaster>
-      <Navbar size={cart.length} setShow = {setShow}/>
+      <SizeProvider cart={cart} setShow={setShow}>
+        <Navbar />
+     
+      {/* <Navbar size={cart.length} setShow = {setShow}/> */}
 
       {
         show ? <Shop handleClick={handleClick}/> : <Cart  cart = {cart} setcart = {setcart}/>
       }
+       </SizeProvider>
       
     </>
   )

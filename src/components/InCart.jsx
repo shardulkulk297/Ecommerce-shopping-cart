@@ -1,10 +1,23 @@
 import React from 'react'
 import {toast, Toaster} from 'react-hot-toast'
+import { useContext } from 'react'
+import { SizeContext } from './SizeContext'
 
-const InCart = ({item}) => {
+const InCart = ({item, cart, setcart}) => {
+
+    const{size, setShow} = useContext(SizeContext)
 
     const {title, author, price, img} = item
+
+    const removeItem = (id)=>{
+        // setcart((prevCart)=>{
+        //     prevCart.filter((product)=> product.id !== id)
+        // })
+        toast.success("Removing.....")
+    }
     return (
+
+        
         <section>
             {toast.success("To go back click on MyShop")}
 
@@ -16,7 +29,7 @@ const InCart = ({item}) => {
                     <p>{title}</p>
                     <p>{author}</p>
                     <p>Price: {price} Rs</p>
-                    <button onClick={() => { handleClick(item) }}>Remove</button>
+                    <button onClick={()=> removeItem(item.id)}>Remove</button>
                     <button>+</button>
                     <button>-</button>
                 </div>
@@ -26,6 +39,7 @@ const InCart = ({item}) => {
             </div>
 
         </section>
+        
     )
 }
 
