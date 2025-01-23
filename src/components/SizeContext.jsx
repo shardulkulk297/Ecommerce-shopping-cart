@@ -4,7 +4,7 @@ export const SizeContext = createContext();
 
 
 export const SizeProvider = ({children, cart, setShow}) => {
-    const size = cart.length;
+    const size = cart?.length || 0; 
 
 
   return (

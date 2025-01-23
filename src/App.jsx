@@ -12,7 +12,7 @@ function App() {
   
   const [cart, setcart] = useState([]);
   const [show, setShow] = useState(true);
-  const cartContext = createContext();
+  
   const handleClick = (item)=>{
     // console.log(item)
     let isPresent = false;
@@ -38,7 +38,7 @@ function App() {
   return (
     <>
     <Toaster position='top-center'></Toaster>
-      <SizeProvider cart={cart} setShow={setShow}>
+      <SizeProvider   cart={cart}  setShow={setShow}>
         <Navbar />
      
       {/* <Navbar size={cart.length} setShow = {setShow}/> */}
