@@ -8,7 +8,7 @@ const Cart = ({ cart, setcart }) => {
 
     const [price, setprice] = useState(0);
     return (
-        <div>
+        <section>
             {cart?.map((item) => {
                 return <div className="cart-box" key={item.id}>
                     <div >
@@ -18,7 +18,7 @@ const Cart = ({ cart, setcart }) => {
                          </div>
             })}
 
-        </div>
+        </section>
     )
 }
 

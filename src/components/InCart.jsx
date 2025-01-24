@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { toast, Toaster } from 'react-hot-toast'
 import { useContext } from 'react'
 import { SizeContext } from './SizeContext'
@@ -11,8 +11,8 @@ const InCart = ({ item, cart, setcart }) => {
 
     }, [])
 
+    const [quantity, setquantity] = useState(1)
     const { size, setShow } = useContext(SizeContext)
-
     const { title, author, price, img } = item
 
 
@@ -43,7 +43,7 @@ const InCart = ({ item, cart, setcart }) => {
     return (
 
 
-        <section>
+        <div>
             
 
             <div className='cards'>
@@ -53,17 +53,19 @@ const InCart = ({ item, cart, setcart }) => {
                 <div className='details'>
                     <p>{title}</p>
                     <p>{author}</p>
-                    <p>Price: {price} Rs</p>
+                    <p>Price: {price * quantity} Rs</p>
+                    <p>Qty: {quantity}</p>
+
                     <button onClick={() => removeItem(item.id)}>Remove</button>
-                    <button>+</button>
-                    <button>-</button>
+                    <button onClick={()=> setquantity(quantity + 1)}>+</button>
+                    <button onClick={()=> setquantity(quantity - 1)}>-</button>
                 </div>
 
 
 
             </div>
 
-        </section>
+        </div>
 
     )
 }
