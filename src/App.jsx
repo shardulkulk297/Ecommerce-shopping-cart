@@ -8,7 +8,7 @@ import Cart from './components/Cart';
 import { createContext } from 'react';
 import { SizeProvider } from './components/SizeContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import Payment from './components/Payment';
 
 function App() {
 
@@ -46,6 +46,7 @@ function App() {
           <Routes>
             <Route index path="/" element={<Shop handleClick={handleClick} />} />
             <Route path='cart' element={<Cart cart={cart} setcart={setcart} />} />
+            <Route path='payments' element={<Payment cart={cart} setcart={setcart} />} />
 
           </Routes>
       

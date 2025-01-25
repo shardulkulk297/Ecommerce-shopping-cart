@@ -49,3 +49,25 @@ body{
 .details button:hover{
     background-color: lightgreen;
 }
+
+.checkout{
+    margin: 10px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    
+    button{
+        padding: 10px;
+        font-size: 15px;
+        background-color: yellow;
+        border: none;
+        border-radius: 10px;
+        font-family:Arial, Helvetica, sans-serif;
+        cursor: pointer;
+
+        &:hover{
+            background-color: rgb(252, 246, 134);
+        }
+
+    }
+}

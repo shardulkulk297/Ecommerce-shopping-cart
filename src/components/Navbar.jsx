@@ -22,7 +22,7 @@ const Navbar = () => {
     
     <nav>
         <div className="nav-box">
-            <span onClick={()=>{setShow(true)}} className='my-shop'>
+            <span onClick={()=>{navigate('/')}} className='my-shop'>
                 My-shop
             </span>
             <div className="cart">
