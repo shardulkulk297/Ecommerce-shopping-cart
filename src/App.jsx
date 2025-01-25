@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css'
-import Navbar from './components/NavBar'
+
 import Shop from './components/Shop'
 import { Toaster, toast } from
   'react-hot-toast';
@@ -9,6 +9,7 @@ import { createContext } from 'react';
 import { SizeProvider } from './components/SizeContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Payment from './components/Payment';
+import Navbar from './components/Navbar';
 
 function App() {
 
