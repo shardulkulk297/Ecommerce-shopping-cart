@@ -55,6 +55,12 @@ body{
     position: absolute;
     left: 50%;
     top: 20%;
+
+    p{
+        padding: 5px;
+        position: relative;
+        right: 13%;
+    }
     
     button{
         padding: 10px;

@@ -3,7 +3,7 @@ import React from 'react'
 const Payment = ({cart, setcart}) => {
   return (
     <div>
-     Pokemon sun 
+     Item checked Out 
     </div>
   )
 }

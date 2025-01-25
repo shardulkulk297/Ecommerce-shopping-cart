@@ -7,8 +7,9 @@ import { useNavigate } from 'react-router-dom'
 
 const InCart = ({ item, cart, setcart }) => {
     // console.log(cart[0].amount);
-
-
+    const navigate = useNavigate();
+    
+  
 
     useEffect(() => {
 
@@ -21,10 +22,10 @@ const InCart = ({ item, cart, setcart }) => {
     const { title, author, price, img } = item
 
     const itemPrice = price * quantity;
-    const totalPrice = cart.reduce((total, currentItem) => { return total + currentItem.price * currentItem.quantity }, 0);
+    const totalPrice = cart.reduce((total, currentItem) => { return total + currentItem.price * currentItem.amount }, 0);
     // console.log(totalPrice)
 
-    const navigate = useNavigate();
+   
     const goToPayment = () => {
         navigate('/payments')
     }
@@ -35,7 +36,7 @@ const InCart = ({ item, cart, setcart }) => {
             const updatedCart = prev.filter((product) => product.id !== id)
 
             if (updatedCart.length === 0) {
-                setShow(true);
+                navigate('/')
             }
 
             return updatedCart
@@ -77,7 +78,9 @@ const InCart = ({ item, cart, setcart }) => {
         <>
             <div className='checkout'>
                 <button onClick={goToPayment}>Checkout</button>
-                <p>Total: {totalPrice}</p>
+                <p>Total Products: {cart.length}</p>
+                <p>Total: {totalPrice} Rs</p>
+
             </div>
 
             <div className='cart-page'>
@@ -90,7 +93,7 @@ const InCart = ({ item, cart, setcart }) => {
                     <div className='details'>
                         <p>{title}</p>
                         <p>{author}</p>
-                        <p>Price: {itemPrice} Rs</p>
+                        <p>Price: {item.price * item.amount} Rs</p>
                         <p>Qty: {item.amount}</p>
 
                         <button onClick={() => removeItem(item.id)}>Remove</button>
