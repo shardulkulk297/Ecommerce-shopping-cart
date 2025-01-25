@@ -2,8 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { toast, Toaster } from 'react-hot-toast'
 import { useContext } from 'react'
 import { SizeContext } from './SizeContext'
+import './InCart.css'
+
 
 const InCart = ({ item, cart, setcart }) => {
+    // console.log(cart);
+
+   
 
     useEffect(()=>{
 
@@ -15,7 +20,7 @@ const InCart = ({ item, cart, setcart }) => {
     const { size, setShow } = useContext(SizeContext)
     const { title, author, price, img } = item
 
-
+    const itemPrice = price * quantity;
 
 
 
@@ -41,9 +46,10 @@ const InCart = ({ item, cart, setcart }) => {
         toast.success(`${title} removed from the cart`)
     }
     return (
-
-
-        <div>
+        <>
+        
+        
+        <div className='cart-page'>
             
 
             <div className='cards'>
@@ -53,7 +59,7 @@ const InCart = ({ item, cart, setcart }) => {
                 <div className='details'>
                     <p>{title}</p>
                     <p>{author}</p>
-                    <p>Price: {price * quantity} Rs</p>
+                    <p>Price: {itemPrice} Rs</p>
                     <p>Qty: {quantity}</p>
 
                     <button onClick={() => removeItem(item.id)}>Remove</button>
@@ -66,6 +72,8 @@ const InCart = ({ item, cart, setcart }) => {
             </div>
 
         </div>
+       
+        </>
 
     )
 }

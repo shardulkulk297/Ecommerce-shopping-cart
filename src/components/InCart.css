@@ -2,10 +2,10 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
- section{
+.cart-box .cart-page{
     width: 80%;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 30%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;

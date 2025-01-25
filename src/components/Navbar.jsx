@@ -3,19 +3,19 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../styles/Navbar.css'
 import {toast, Toaster} from 'react-hot-toast';
 import { SizeContext } from './SizeContext';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
     const {size, setShow} = useContext(SizeContext);
-
+    const navigate = useNavigate();
     const showCart = ()=>{
         if(size === 0)
         {
-            setShow(true)
             toast.error("CART IS EMPTY")
         }
         else{
-            setShow(false)
+            navigate('/cart')
         }
     }
   return (

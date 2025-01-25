@@ -4,7 +4,7 @@ import Card from './Card';
 
 const Shop = ({handleClick}) => {
   return (
-    <section>
+    <section className='main-cart'>
         {List.map((item)=>{
             return <Card key={item.id} handleClick={handleClick}  item={item} />
         })}
